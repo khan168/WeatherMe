@@ -1,0 +1,22 @@
+{
+  "name": "working-with-apis",
+  "version": "1.0.0",
+  "description": "a website accepting user input of city to create a dynamic URL which shows the current weather conditions in that city using openWeatherMap’s API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khan168/WeatherMe.git"
+  },
+  "author": "Umar Khan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khan168/WeatherMe/issues"
+  },
+  "homepage": "https://github.com/khan168/WeatherMe#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
+}
