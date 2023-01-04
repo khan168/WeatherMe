@@ -1,7 +1,11 @@
-import { resolve } from "path";
+const Dotenv = require("dotenv-webpack");
+const path = require("path");
 
-export const entry = "./src/app.js";
-export const output = {
+module.exports = {
+  entry: "./src/app.js",
+  output: {
     filename: "main.js",
-    path: resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "dist"),
+  },
+  plugins: [new Dotenv()],
 };
