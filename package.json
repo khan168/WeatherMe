@@ -2,7 +2,7 @@
   "name": "working-with-apis",
   "version": "1.0.0",
   "description": "a website accepting user input of city to create a dynamic URL which shows the current weather conditions in that city using openWeatherMap’s API",
-  "main": "app.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,5 +18,9 @@
   "homepage": "https://github.com/khan168/WeatherMe#readme",
   "dependencies": {
     "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
