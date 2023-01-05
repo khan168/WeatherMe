@@ -1,12 +1,4 @@
 
-//steps to complete
-/*
-1.create module pattern instead of weather obj [done] 
-2.create a display module - follow solid principle [can't without npm]
-3.async await instead of chained .then 
-*/
-
-
 const weather_module =(()=>{
   const fetchweather=async function (city) {
     try{
