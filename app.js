@@ -1,34 +1,29 @@
-// import * as dotenv from "dotenv";
-// dotenv.config();
 
 //steps to complete
 /*
 1.create module pattern instead of weather obj [done] 
-2.create a display module - follow solid principle 
+2.create a display module - follow solid principle [can't without npm]
 3.async await instead of chained .then 
-
-issues: 1.can't apply css-> completes ui 2. how to use .env files with webpack-> publishable
 */
 
+
 const weather_module =(()=>{
-  const key= process.env.API_KEY
-  const fetchweather=function (city) {
-    fetch(
+  const fetchweather=async function (city) {
+    try{
+    const response=await fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         city +
         "&appid=" +
-        "796dbbd05685c48b6c4f0325e40936b4" +
+        "ENTER KEY HERE"+
         "&units=metric"
     )
-      .then((response) => response.json())
-      .then((data) => {
-        displayWeather(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    const data = await response.json();
+    displayWeather(data);
+  }catch(err){
+    console.log(err);
   }
-  const displayWeather= function (data) {
+  }
+  const displayWeather= async function (data) {
     const { name } = data;
     const { description, icon } = data.weather[0];
     const { temp, humidity } = data.main;
@@ -41,7 +36,7 @@ const weather_module =(()=>{
     document.querySelector(".icon").src =
       "http://openweathermap.org/img/wn/" + icon + ".png";
   }
-  const search=function () {
+  const search=async function () {
     fetchweather(document.querySelector(".search-bar").value);
   }
   return {
